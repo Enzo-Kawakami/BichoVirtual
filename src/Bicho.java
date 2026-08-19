@@ -3,7 +3,7 @@ public class Bicho {
     private String nome;
     private int fome;
     private int energia;
-    private String humor;
+    private int humor;
 
     public String getNome() {
         return nome;
@@ -43,14 +43,32 @@ public class Bicho {
        }
     }
 
-    public String getHumor() {
+    public int getHumor() {
         return humor;
     }
 
-    public void setHumor(String humor) {
+    public void setHumor(int humor) {
+        if (humor >= 150 ){
+            IO.println("Feliz");
+        }else if(humor <= 149 ){
+            IO.println("Neutro");
+        }else if(humor <=50 ){
+            IO.println("Triste");
+        }else{
+            IO.println("Chateado");
+        }
         this.humor = humor;
     }
     public Bicho() {
     }
 
+    @Override
+    public String toString() {
+        return "Bicho{" +
+                "nome='" + nome + '\'' +
+                ", fome=" + fome +
+                ", energia=" + energia +
+                ", humor=" + humor +
+                '}';
+    }
 }
